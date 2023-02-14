@@ -37,25 +37,24 @@ public class Main {
                 arvore.adicionar(Integer.parseInt(novoValor));
                 break;
             case "3":
-                System.out.println("Digite o valor(numérico e inteiro) a ser excluido:");
-                String valorExcluir = leitoraDados.lerTexto();
-                boolean resultadoRemover = arvore.remover(Integer.parseInt(valorExcluir));
-                if (resultadoRemover) {
-                    System.out.println("O valor " + valorExcluir + " foi excluido da árvore.");
+                System.out.println("Digite o valor(numérico e inteiro) a ser pesquisado:");
+                String valorPesquisado = leitoraDados.lerTexto();
+                boolean resultadoPesqusa = arvore.search(Integer.parseInt(valorPesquisado));
+                if (resultadoPesqusa) {
+                    System.out.println("O valor pertence a árvore.");
                 } else {
-                    System.out.println("O valor " + valorExcluir + " não foi excluido da árvore, pois não pertence à mesma.");
+                    System.out.println("O valor não pertence a árvore.");
                 }
                 break;
             case "4":
                 System.out.println("Digite o valor(numérico e inteiro) a ser excluido:");
                 String valorPesquisa = leitoraDados.lerTexto();
-                boolean resultadoPesquisa = arvore.remover(Integer.parseInt(valorPesquisa));
-                if (resultadoPesquisa) {
-                    System.out.println("O valor " + valorPesquisa + " pertence a árvore.");
+                No resultadoDelete = arvore.remover(Integer.parseInt(valorPesquisa));
+                if (resultadoDelete == null) {
+                    System.out.println("O valor não pertence a árvore.");
                 } else {
-                    System.out.println("O valor " + valorPesquisa + " não pertence a árvore.");
+                    System.out.println("O valor excluido da árvore.");
                 }
-
                 break;
             case "5":
                 System.out.println("Exibindo Pré-ordem");
